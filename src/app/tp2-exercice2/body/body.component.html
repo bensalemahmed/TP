@@ -1,0 +1,38 @@
+<div id="page-content-wrapper" *ngIf="urls">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1>{{ car.name}}</h1>
+            </div>
+            <div class="col-lg-12">
+                <h3>informations génériques</h3>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Modéle: {{ car.model}}</li>
+                <li class="list-group-item">Classe: {{ car.vehicle_class}}</li>
+                <li class="list-group-item">Constructeur: {{ car.manufacturer}}</li>
+                <li class="list-group-item">cout de construction : {{ car.cost_in_credits}} credit</li>
+            </ul>
+            <div class="col-lg-12">
+                <h3> Dimensions</h3>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Longueur: {{ car.length}}</li>
+                <li class="list-group-item"> Equipage: {{ car.crew}}</li>
+                <li class="list-group-item">Passagers: {{ car.passengers}}</li>
+                <li class="list-group-item">Capacité de cargo : {{ car.cargo_capacity}} credit</li>
+            </ul>
+            <div class="col-lg-12">
+                <h3> Propulsion</h3>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Vitesse: {{ car.max_atmosphering_speed}}</li>
+                <li class="list-group-item"> Vitesse autosphérique: {{ car.max_atmosphering_speed}}</li>
+                <li class="list-group-item">Facteur d'hyperpropulsion: {{ car.passengers}}</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="spinner-border" role="status" *ngIf="!car">
+    <span class="sr-only">Loading...</span>
+  </div>

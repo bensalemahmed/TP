@@ -1,0 +1,31 @@
+<div class="container myDiv">
+
+  Civilité  : 
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="options" id="inlineRadio1" value="Mr"[(ngModel)]="model.options" >
+    <label class="form-check-label" for="inlineRadio1">Mr</label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="options" id="inlineRadio2" value="Mme"[(ngModel)]="model.options">
+    <label class="form-check-label" for="inlineRadio2">Mme</label>
+  </div>
+
+  <div class="form-group">
+    <label for="exampleInputEmail1">Nom :</label>
+    <input  class="form-control"   placeholder="Nom" [(ngModel)]="nom">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Prénom :</label>
+    <input  class="form-control"  placeholder="Prénom"[(ngModel)]="prenom">
+  </div>
+    <p>Bienvenue {{ cili }} {{ nom  | titlecase }} {{ prenom  | titlecase}} </p>
+
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">age:</label>
+      <input  class="form-control"  placeholder="age"[(ngModel)]="age">
+    </div> 
+    <p *ngIf = "age > 18 "> A je Vois que vous étes majeur puisque vous avez {{ age }} ans.</p>
+    <p *ngIf = "age < 18 "> A je Vois que vous étes non majeur puisque vous avez {{ age }} ans.</p>
+
+</div>

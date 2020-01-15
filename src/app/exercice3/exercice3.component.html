@@ -1,0 +1,23 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="btn btn-primary" (click)="servi.mode = 'create'">Nouveau Message</div>
+    </div>
+  </div>
+  <div class="row">
+    <div class=" col-4">
+      <div class="card mt-2" (click)="servi.mode = 'view'; mail= m ; index =i"  *ngFor="let m of servi.getListe() ;let i = index" >
+        <div class="card-body">
+          <h5 class="card-title">{{ m.obj}}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Envoyé par : {{ m.email1}}</h6>
+          <h6 class="card-subtitle mb-2 text-muted">le : {{ m.date | date }}</h6>
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+      <app-form *ngIf="servi.mode === 'view'" [mail]='mail'[i]='index'></app-form>
+      <app-form *ngIf="servi.mode === 'create'"></app-form>
+    </div>
+  </div>
+</div>

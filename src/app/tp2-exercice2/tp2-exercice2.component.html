@@ -1,0 +1,21 @@
+<div id="wrapper">
+  <div id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+        <li class="sidebar-brand" *ngFor="let m of datas" (click)="servi.mode = 'view'; getOne(m.url) "  >
+          <div class="card" >
+            <div class="card-body">
+              <h5 class="card-title">{{ m.name}}</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Modéle : {{ m.model }}</h6>
+              <h6 class="card-subtitle mb-2 text-muted">Classe : {{ m.vehicle_class }}</h6>
+            </div>
+          </div>
+        </li>
+    </ul>
+  </div>
+  
+<app-body [urls]='urls' ></app-body>
+
+<div class="spinner-border" role="status" *ngIf="!datas">
+  <span class="sr-only">Loading...</span>
+</div>
+</div>
